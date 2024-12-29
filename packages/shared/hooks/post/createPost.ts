@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { CREATE_POST, UPDATE_POST } from '../../graphql/mutation/post';
 import { GET_MY_POSTS } from '../../graphql/query/post';
-import { fileUpload } from '../../utils/fileUpload';
+//import { fileUpload } from '../../utils/fileUpload';
 import { omitTypename } from '../../utils/omitTypename';
 
 interface IProps {
@@ -73,7 +73,7 @@ export function useCreatePost({ onAlert, onSuccess, post = defaultPost }: IProps
       }
       let newMedia = [];
       if (state.tempMediaFiles.length > 0) {
-        newMedia = await fileUpload(state.tempMediaFiles, '/posts');
+        //newMedia = await fileUpload(state.tempMediaFiles, '/posts');
       }
       newMedia = newMedia.map((n, i) => ({ url: n, caption: state.tempMedia[i].caption }));
       let media = [...state.media, ...newMedia];
