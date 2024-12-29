@@ -8,7 +8,7 @@ import { Provider, useDispatch, useSelector } from 'react-redux';
 import { ApolloProvider } from '@apollo/client/react';
 import { client, guestClient } from '@frontend/shared/graphql';
 import { setDefaultThemeAction } from '@frontend/shared/redux/actions/setting';
-import awsExports from '@frontend/shared/aws-exports';
+//import awsExports from '@frontend/shared/aws-exports';
 import { store } from '@frontend/shared/redux';
 // import { useInitializeSystem } from '@frontend/shared/hooks/form';
 // import { useLogoHook } from '@frontend/shared/hooks/metaTags';
@@ -48,15 +48,15 @@ const customsSignOutUrl =
     ? 'http://localhost:3000/auth/'
     : 'https://www.boossti.com/auth/';
 
-Amplify.configure({
-  ...awsExports,
-  ssr: true,
-  oauth: {
-    ...awsExports.oauth,
-    redirectSignIn: customsSignInUrl,
-    redirectSignOut: customsSignOutUrl,
-  },
-});
+// Amplify.configure({
+//   ...awsExports,
+//   ssr: true,
+//   oauth: {
+//     ...awsExports.oauth,
+//     redirectSignIn: customsSignInUrl,
+//     redirectSignOut: customsSignOutUrl,
+//   },
+// });
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
